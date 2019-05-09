@@ -15,10 +15,13 @@ class App extends Component {
   }
 
   toggle = () => {
-    const text=this.myRef.current.value;
+    let text = this.myRef.current.value;
     console.log(text);
-   
-  }
+    text = this.state.uppercase ? text.toLowerCase() :text.toUpperCase();
+    this.setState({
+                uppercase: !this.state.uppercase
+                  })
+           }
 
   render() {
     return (
